@@ -1,6 +1,6 @@
-# omer-throttle
+# throttle
 
-The omer-throttle library takes care on how throttling needs to be done.
+The throttle library takes care on how throttling needs to be done.
 
 Developers, often tend to make sure, different throttling rates need to be applied to different types of requests.
 
