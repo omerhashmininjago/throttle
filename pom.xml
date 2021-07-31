@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.omer.util</groupId>
+    <groupId>io.github.omerhashmininjago</groupId>
     <artifactId>throttle</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
@@ -14,8 +14,8 @@
     <url>https://github.com/omerhashmininjago/</url>
 
     <scm>
-        <url>https://github.com/omerhashmininjago/omer-throttle.git</url>
-        <connection>git@github.com:omerhashmininjago/omer-throttle.git</connection>
+        <url>https://github.com/omerhashmininjago/throttle.git</url>
+        <connection>git@github.com:omerhashmininjago/throttle.git</connection>
     </scm>
 
     <developers>
