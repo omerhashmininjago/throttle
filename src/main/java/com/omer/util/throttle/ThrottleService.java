@@ -1,6 +1,6 @@
 package com.omer.util.throttle;
 
-import com.omer.util.throttle.dao.ThrottleDao;
+import com.omer.util.throttle.source.ThrottleSource;
 import com.omer.util.throttle.domain.ThrottleInfo;
 
 import java.util.concurrent.ConcurrentHashMap;
@@ -19,10 +19,10 @@ public abstract class ThrottleService<T extends ThrottleInfo> {
     private ConcurrentHashMap<String, Semaphore> throttleLimiter;
     private final Predicate<T> IS_THROTTLING_ENABLED = bean -> bean.getThrottleRate() > 0;
 
-    private final ThrottleDao<T> throttleDao;
+    private final ThrottleSource<T> throttleSource;
 
-    protected ThrottleService(ThrottleDao<T> throttleDao) {
-        this.throttleDao = throttleDao;
+    protected ThrottleService(ThrottleSource<T> throttleSource) {
+        this.throttleSource = throttleSource;
     }
 
     /**
@@ -32,7 +32,7 @@ public abstract class ThrottleService<T extends ThrottleInfo> {
     public void init() {
         throttleLimiter = new ConcurrentHashMap<>();
 
-        throttleDao.getThrottleRates().stream()
+        throttleSource.getThrottleRates().stream()
                 .filter(IS_THROTTLING_ENABLED)
                 .forEach(bean ->
                         this.throttleLimiter

@@ -6,9 +6,14 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.Semaphore;
 
-public final class LockSafeUtil {
+/**
+ * This utility makes sure that the developer
+ * does not need to take care of releasing the semaphore
+ * in any type of scenario that occurs
+ */
+public final class PermitSafeUtil {
 
-    private LockSafeUtil() {}
+    private PermitSafeUtil() {}
 
     public static Optional<Object> execute(Semaphore semaphore, Execute execute) {
 
