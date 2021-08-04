@@ -2,13 +2,10 @@ package com.omer.util.throttle.domain;
 
 import java.util.Objects;
 
-public class ThrottleInfo {
+public final class ThrottleInfo {
 
-    protected String throttleKey;
-    protected int throttleRate;
-
-    public ThrottleInfo() {
-    }
+    protected final String throttleKey;
+    protected final int throttleRate;
 
     public ThrottleInfo(String throttleKey, int throttleRate) {
         this.throttleKey = throttleKey;
